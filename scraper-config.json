@@ -1,21 +1,17 @@
 {
-  "torrentgalaxy": {
-    "name": "TorrentGalaxy",
-    "url": "https://torrentgalaxy.to/torrents.php?search={{query}}&sort=id&order=desc&page={{page:0}}",
-    "list": "div.tgxtablerow",
+  "magnetDL": {
+    "name": "magnetDL",
+    "url": "https://www.magnetdl.org/search/?q={{query}}&m=1&x=0&y=0",
+    "list": "table[class=download] tbody tr",
     "result": {
-      "name": [
-        "div:nth-of-type(4) div a",
-        "@title"
-      ],
-      "url": [
-        "div:nth-of-type(4) div a",
-        "@href"
-      ],
-      "size": "div:nth-of-type(8)",
-      "seeds": "div:nth-of-type(10)"
+      "name": [ "td[class=n]", "a[href]", "@title" ],
+      "magnet": [ "td[class=m]", "a[href]", "@href" ],
+      "url": [ "td[class=n]", "a[href]", "@href" ],
+      "size": "td:nth-child(6)",
+      "seeds": "td[class=s]"
     }
   },
+
   "torrentgalaxy/item": {
     "name": "TorrentGalaxy/item",
     "url": "https://torrentgalaxy.to{{item}}",
