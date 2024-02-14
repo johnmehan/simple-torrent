@@ -1,6 +1,6 @@
 {
   "magnetDL": {
-    "name": "magnetDL",
+    "name": "MagnetDL",
     "url": "https://www.magnetdl.org/search/?q={{query}}&m=1&x=0&y=0",
     "list": "table[class=download] tbody tr",
     "result": {
@@ -12,7 +12,7 @@
     }
   },
   "eztv": {
-    "name": "eztv",
+    "name": "EZTV",
     "url": "https://eztvx.to/search/{{query}}",
     "list": "tr[class=forum_header_border]",
     "result": {
@@ -23,7 +23,7 @@
     }
   },
   "eztv/item": {
-    "name": "eztv",
+    "name": "EZTV",
     "url": "https://eztvx.to{{item}}",
     "result": {
       "magnet": [
@@ -32,6 +32,17 @@
         "@href"
       ]
     }
+  },
+ "torrentgalaxy": {
+    "name": "Torrent Galaxy",
+    "url": "https://tgx.rs/torrents.php?search={{query}}&lang=0&nox=2&nowildcard=1",
+    "list": "div.tgxtablerow",
+    "result": {
+      "name": ["div:nth-of-type(4)", "div", "a[href]", "@title" ],
+      "url": [ "div:nth-of-type(4)", "@data-href"],
+      "size": [ "div:nth-of-type(8)"],
+      "seeds": [ "div:nth-of-type(11)", "span", "font:nth-of-type(2)", "b"],
+      "magnet": [ "div:nth-of-type(5)", "a:nth-of-type(2)", "@href"]
+    }
   }
-
 }
