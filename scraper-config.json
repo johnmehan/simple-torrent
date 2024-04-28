@@ -11,7 +11,7 @@
       "magnet": [ "div:nth-of-type(5)", "a:nth-of-type(2)", "@href"]
     }
   },
-      "1337x": {
+  "1337x": {
         "name": "1337X",
         "url": "http://1337x.to/sort-search/{{query}}/seeders/desc/{{page:1}}/",
         "list": ".box-info-detail table.table tr",
