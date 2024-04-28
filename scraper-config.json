@@ -1,179 +1,197 @@
 {
-"torrentgalaxy": {
+  "1337x": {
+    "name": "1337X",
+    "url": "http://1337x.to/sort-search/{{query}}/seeders/desc/{{page:1}}/",
+    "list": ".box-info-detail table.table tr",
+    "result": {
+      "name": [
+        ".coll-1 a:nth-child(2)"
+      ],
+      "peers": [
+        ".coll-3"
+      ],
+      "seeds": [
+        ".coll-2"
+      ],
+      "size": [
+        ".coll-4",
+        "/([\\d\\.]+ [KMGT]?B)/"
+      ],
+      "url": [
+        ".coll-1 a:nth-child(2)",
+        "@href"
+      ]
+    },
+    "Debug": false
+  },
+  "1337x/item": {
+    "name": "1337X (Item)",
+    "url": "http://1337x.to{{item}}",
+    "result": {
+      "magnet": [
+        "a[href^='magnet:']",
+        "@href"
+      ]
+    },
+    "Debug": false
+  },
+  "abb": {
+    "name": "The Audiobook Bay",
+    "url": "https://audiobookbay.is/page/{{page:1}}/?s=%22{{query}}%22",
+    "headers": {
+      "Accept": "*/*",
+      "User-Agent": "curl/8.4.0"
+    },
+    "list": "#content > .post",
+    "result": {
+      "name": [
+        "div.postTitle > h2 > a"
+      ],
+      "size": [
+        "div.postContent",
+        "/File Size: ([\\d\\.]+ [KMGT]?B)/"
+      ],
+      "url": [
+        "div.postTitle > h2 > a",
+        "@href"
+      ]
+    },
+    "Debug": false
+  },
+  "abb/item": {
+    "name": "The Audiobook Bay (Item)",
+    "url": "https://audiobookbay.is{{item}}",
+    "headers": {
+      "Accept": "*/*",
+      "User-Agent": "curl/8.4.0"
+    },
+    "result": {
+      "infohash": [
+        "/td>([a-f0-9]+)</"
+      ],
+      "tracker": [
+        "table.torrent_info tr:nth-child(1) td:nth-child(2)"
+      ]
+    },
+    "Debug": false
+  },
+  "eztv": {
+    "name": "EZTV",
+    "url": "https://eztv.ag/search/{{query}}",
+    "list": "table tr.forum_header_border",
+    "result": {
+      "magnet": [
+        "td:nth-child(3) a:nth-child(1)",
+        "@href"
+      ],
+      "name": [
+        "td:nth-child(2) a"
+      ],
+      "seeds": [
+        "td:nth-child(6)"
+      ],
+      "size": [
+        "td:nth-child(4)"
+      ],
+      "url": [
+        "td:nth-child(2) a",
+        "@href"
+      ]
+    },
+    "Debug": false
+  },
+  "lt": {
+    "name": "limetorrents",
+    "url": "https://www.limetorrents.cc/search/all/{{query}}/seeds/{{page:1}}/",
+    "list": ".table2 tbody tr",
+    "result": {
+      "name": [
+        ".tt-name a:nth-child(2)"
+      ],
+      "peers": [
+        "td:nth-child(5)"
+      ],
+      "seeds": [
+        "td:nth-child(4)"
+      ],
+      "size": [
+        "td:nth-child(3)"
+      ],
+      "url": [
+        ".tt-name a:nth-child(2)",
+        "@href"
+      ]
+    },
+    "Debug": false
+  },
+  "lt/item": {
+    "name": "limetorrents (Item)",
+    "url": "https://www.limetorrents.cc{{item}}",
+    "result": {
+      "magnet": [
+        "a.csprite_dltorrent[href^=\"magnet:\"]",
+        "@href"
+      ]
+    },
+    "Debug": false
+  },
+  "nyaa": {
+    "name": "Nyaa",
+    "url": "https://nyaa.si/?f=0&c=0_0&s=seeders&o=desc&q={{query}}&p={{page:1}}",
+    "list": "table.torrent-list > tbody > tr",
+    "result": {
+      "magnet": [
+        "a[href^='magnet:']",
+        "@href"
+      ],
+      "name": [
+        "td:nth-child(2) a:nth-child(2)",
+        "@title"
+      ],
+      "path": [
+        "td:nth-child(2) a:nth-child(2)",
+        "@href"
+      ],
+      "peers": [
+        "td:nth-child(7)"
+      ],
+      "seeds": [
+        "td:nth-child(6)"
+      ],
+      "size": [
+        "td:nth-child(4)"
+      ]
+    }
+  },
+  "torrentgalaxy": {
     "name": "Torrent Galaxy",
     "url": "https://tgx.rs/torrents.php?search={{query}}&lang=0&nox=2&nowildcard=1",
     "list": "div.tgxtablerow",
     "result": {
-      "name": ["div:nth-of-type(4)", "div", "a[href]", "@title" ],
-      "url": [ "div:nth-of-type(4)", "@data-href"],
-      "size": [ "div:nth-of-type(8)"],
-      "seeds": [ "div:nth-of-type(11)", "span", "font:nth-of-type(2)", "b"],
-      "magnet": [ "div:nth-of-type(5)", "a:nth-of-type(2)", "@href"]
+      "name": [
+        "div:nth-of-type(4)",
+        "div",
+        "a[href]",
+        "@title"
+      ],
+      "url": [
+        "div:nth-of-type(4)",
+        "@data-href"
+      ],
+      "size": [
+        "div:nth-of-type(8)"
+      ],
+      "seeds": [
+        "div:nth-of-type(11)",
+        "span",
+        "font:nth-of-type(2)",
+        "b"
+      ],
+      "magnet": [
+        "div:nth-of-type(5)",
+        "a:nth-of-type(2)",
+        "@href"
+      ]
     }
-  },
-  "1337x": {
-        "name": "1337X",
-        "url": "http://1337x.to/sort-search/{{query}}/seeders/desc/{{page:1}}/",
-        "list": ".box-info-detail table.table tr",
-        "result": {
-          "name": [
-            ".coll-1 a:nth-child(2)"
-          ],
-          "peers": [
-            ".coll-3"
-          ],
-          "seeds": [
-            ".coll-2"
-          ],
-          "size": [
-            ".coll-4",
-            "/([\\d\\.]+ [KMGT]?B)/"
-          ],
-          "url": [
-            ".coll-1 a:nth-child(2)",
-            "@href"
-          ]
-        },
-        "Debug": false
-      },
-      "1337x/item": {
-        "name": "1337X (Item)",
-        "url": "http://1337x.to{{item}}",
-        "result": {
-          "magnet": [
-            "a[href^='magnet:']",
-            "@href"
-          ]
-        },
-        "Debug": false
-      },
-      "abb": {
-        "name": "The Audiobook Bay",
-        "url": "https://audiobookbay.is/page/{{page:1}}/?s=%22{{query}}%22",
-        "headers": {
-          "Accept": "*/*",
-          "User-Agent": "curl/8.4.0"
-        },
-        "list": "#content > .post",
-        "result": {
-          "name": [
-            "div.postTitle > h2 > a"
-          ],
-          "size": [
-            "div.postContent",
-            "/File Size: ([\\d\\.]+ [KMGT]?B)/"
-          ],
-          "url": [
-            "div.postTitle > h2 > a",
-            "@href"
-          ]
-        },
-        "Debug": false
-      },
-      "abb/item": {
-        "name": "The Audiobook Bay (Item)",
-        "url": "https://audiobookbay.is{{item}}",
-        "headers": {
-          "Accept": "*/*",
-          "User-Agent": "curl/8.4.0"
-        },
-        "result": {
-          "infohash": [
-            "/td>([a-f0-9]+)</"
-          ],
-          "tracker": [
-            "table.torrent_info tr:nth-child(1) td:nth-child(2)"
-          ]
-        },
-        "Debug": false
-      },
-      "eztv": {
-        "name": "EZTV",
-        "url": "https://eztv.ag/search/{{query}}",
-        "list": "table tr.forum_header_border",
-        "result": {
-          "magnet": [
-            "td:nth-child(3) a:nth-child(1)",
-            "@href"
-          ],
-          "name": [
-            "td:nth-child(2) a"
-          ],
-          "seeds": [
-            "td:nth-child(6)"
-          ],
-          "size": [
-            "td:nth-child(4)"
-          ],
-          "url": [
-            "td:nth-child(2) a",
-            "@href"
-          ]
-        },
-        "Debug": false
-      },
-      "lt": {
-        "name": "limetorrents",
-        "url": "https://www.limetorrents.cc/search/all/{{query}}/seeds/{{page:1}}/",
-        "list": ".table2 tbody tr",
-        "result": {
-          "name": [
-            ".tt-name a:nth-child(2)"
-          ],
-          "peers": [
-            "td:nth-child(5)"
-          ],
-          "seeds": [
-            "td:nth-child(4)"
-          ],
-          "size": [
-            "td:nth-child(3)"
-          ],
-          "url": [
-            ".tt-name a:nth-child(2)",
-            "@href"
-          ]
-        },
-        "Debug": false
-      },
-      "lt/item": {
-        "name": "limetorrents (Item)",
-        "url": "https://www.limetorrents.cc{{item}}",
-        "result": {
-          "magnet": [
-            "a.csprite_dltorrent[href^=\"magnet:\"]",
-            "@href"
-          ]
-        },
-        "Debug": false
-      },
-      "nyaa": {
-        "name": "Nyaa",
-        "url": "https://nyaa.si/?f=0&c=0_0&s=seeders&o=desc&q={{query}}&p={{page:1}}",
-        "list": "table.torrent-list > tbody > tr",
-        "result": {
-          "magnet": [
-            "a[href^='magnet:']",
-            "@href"
-          ],
-          "name": [
-            "td:nth-child(2) a:nth-child(2)",
-            "@title"
-          ],
-          "path": [
-            "td:nth-child(2) a:nth-child(2)",
-            "@href"
-          ],
-          "peers": [
-            "td:nth-child(7)"
-          ],
-          "seeds": [
-            "td:nth-child(6)"
-          ],
-          "size": [
-            "td:nth-child(4)"
-          ]
-        },
-        "Debug": false
-      }
+  }
 }
