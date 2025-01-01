@@ -8,7 +8,8 @@
       "magnet": ["a.magnet-button","@href"],
       "url": ["td.name span.title a.btn","@href"],
       "size": "td.size",
-      "seeds": "td.seeds"
+      "seeds": "td.seeds",
+      "peers": "td.peers"
     }
   },
   "1337x": {
