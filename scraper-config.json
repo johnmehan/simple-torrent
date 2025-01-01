@@ -1,4 +1,16 @@
 {
+  "bitlordsearch": {
+    "name":"bitlordsearch",
+    "url": "https://bitlordsearch.com/search?q={{query}}",
+    "list": "table.table-torrents tbody tr",
+    "result": {
+      "name": "td.name span.title",
+      "magnet": ["a.magnet-button","@href"],
+      "url": ["td.name span.title a.btn","@href"],
+      "size": "td.size",
+      "seeds": "td.seeds"
+    }
+  },
   "1337x": {
     "name": "1337X",
     "url": "http://1337x.to/sort-search/{{query}}/seeders/desc/{{page:1}}/",
